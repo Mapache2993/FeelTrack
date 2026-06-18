@@ -8,30 +8,37 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>🎵 FeelTrack</h1>
-        <p>Encuentra música por emociones, canciones o álbumes.</p>
+<div class="container">
 
-        <select id="tipoBusqueda">
-            <option value="cancion">Canción</option>
-            <option value="album">Álbum</option>
-            <option value="emocion">Emoción o situación</option>
-        </select>
+    <h1>🎵 FeelTrack</h1>
 
-        <input
-            type="text"
-            id="entrada"
-            placeholder="Escribe aquí..."
-        >
+    <h2>Encuentra tu vibra</h2>
 
-        <button onclick="buscarMusica()">
-            Encontrar música
-        </button>
+    <p class="descripcion">
+        Descubre canciones, álbumes y emociones que conectan contigo.
+    </p>
 
-        <div id="resultados"></div>
-    </div>
+    <select id="tipoBusqueda">
+        <option value="cancion">Canción</option>
+        <option value="album">Álbum</option>
+        <option value="emocion">Emoción o situación</option>
+    </select>
 
-    <script src="script.js"></script>
+    <input
+        type="text"
+        id="entrada"
+        placeholder="¿Qué estás buscando?"
+    >
+
+    <button onclick="buscarMusica()">
+        Buscar
+    </button>
+
+    <div id="resultados"></div>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
