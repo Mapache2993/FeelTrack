@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba Deezer</title>
+</head>
+
+<body>
+
+    <input
+        type="text"
+        id="busqueda"
+        placeholder="Escribe algo">
+
+    <button onclick="buscar()">
+        Buscar
+    </button>
+
+    <div id="resultado"></div>
+
+    <script>
+
+    async function buscar() {
+
+    const termino =
+        document.getElementById("busqueda").value;
+
+    try {
+
+        const respuesta = await fetch(
+            `https://api.deezer.com/search?q=${termino}`
+        );
+
+        const datos = await respuesta.json();
+
+        let html = "";
+
+        datos.data.slice(0,5).forEach(cancion => {
+
+            html += `
+                <div style="
+                    margin:20px;
+                    padding:15px;
+                    border-radius:12px;
+                    background:#f0f0f0;
+                ">
+
+                    <img
+                        src="${cancion.album.cover_medium}"
+                        width="150">
+
+                    <h3>${cancion.title}</h3>
+
+                    <p>${cancion.artist.name}</p>
+
+                </div>
+            `;
+        });
+
+        document.getElementById("resultado")
+            .innerHTML = html;
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        document.getElementById("resultado")
+            .innerHTML =
+            "Ocurrió un error";
+    }
+}
+
+    </script>
+
+</body>
+
+</html>
