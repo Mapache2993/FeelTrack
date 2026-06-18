@@ -3,6 +3,7 @@ const canciones = [
     {
         titulo: "The Night We Met",
         artista: "Lord Huron",
+        portada: "https://picsum.photos/400?random=1",
         compatibilidad: 94,
         tags: ["nostalgia", "lluvia", "amor", "desamor", "recuerdos"],
 
@@ -16,6 +17,7 @@ const canciones = [
     {
         titulo: "Apocalypse",
         artista: "Cigarettes After Sex",
+        portada: "https://picsum.photos/400?random=2",
         compatibilidad: 91,
         tags: ["romance", "noche", "soledad", "amor"],
 
@@ -29,6 +31,7 @@ const canciones = [
     {
         titulo: "Space Song",
         artista: "Beach House",
+        portada: "https://picsum.photos/400?random=3",
         compatibilidad: 94,
         tags: ["nostalgia", "lluvia", "reflexion", "soledad"],
 
@@ -42,6 +45,7 @@ const canciones = [
     {
         titulo: "After Dark",
         artista: "Mr. Kitty",
+        portada: "https://picsum.photos/400?random=4",
         compatibilidad: 97,
         tags: ["noche", "lluvia", "ciudad", "soledad"],
 
@@ -55,6 +59,7 @@ const canciones = [
     {
         titulo: "Midnight City",
         artista: "M83",
+        portada: "https://picsum.photos/400?random=5",
         compatibilidad: 93,
         tags: ["ciudad", "noche", "carretera", "energía"],
 
@@ -68,6 +73,7 @@ const canciones = [
     {
         titulo: "Nightcall",
         artista: "Kavinsky",
+        portada: "https://picsum.photos/400?random=6",
         compatibilidad: 95,
         tags: ["noche", "carretera", "lluvia", "ciudad"],
 
@@ -81,6 +87,7 @@ const canciones = [
     {
         titulo: "505",
         artista: "Arctic Monkeys",
+        portada: "https://picsum.photos/400?random=7",
         compatibilidad: 92,
         tags: ["desamor", "amor", "nostalgia", "noche"],
 
@@ -94,6 +101,7 @@ const canciones = [
     {
         titulo: "Sweater Weather",
         artista: "The Neighbourhood",
+        portada: "https://picsum.photos/400?random=8",
         compatibilidad: 90,
         tags: ["nostalgia", "amor", "otoño", "romance"],
 
@@ -107,6 +115,7 @@ const canciones = [
     {
         titulo: "Blinding Lights",
         artista: "The Weeknd",
+        portada: "https://picsum.photos/400?random=9",
         compatibilidad: 96,
         tags: ["energía", "noche", "ciudad", "fiesta"],
 
@@ -120,6 +129,7 @@ const canciones = [
     {
         titulo: "Starboy",
         artista: "The Weeknd",
+        portada: "https://picsum.photos/400?random=10",
         compatibilidad: 89,
         tags: ["energía", "confianza", "fiesta"],
 
@@ -133,6 +143,7 @@ const canciones = [
     {
         titulo: "Yellow",
         artista: "Coldplay",
+        portada: "https://picsum.photos/400?random=11",
         compatibilidad: 93,
         tags: ["romance", "amor", "felicidad"],
 
@@ -146,6 +157,7 @@ const canciones = [
     {
         titulo: "Cigarette Daydreams",
         artista: "Cage The Elephant",
+        portada: "https://picsum.photos/400?random=12",
         compatibilidad: 92,
         tags: ["melancolia", "nostalgia", "reflexion"],
 
@@ -184,12 +196,19 @@ function crearTarjeta(cancion) {
     });
 
     return `
-        <div class="card">
+    <div class="card">
 
-            <h3>🎵 ${cancion.titulo}</h3>
+        <img
+            src="${cancion.portada}"
+            class="portada"
+            alt="${cancion.titulo}">
+
+        <h3>🎵 ${cancion.titulo}</h3>
 
             <p>${cancion.artista}</p>
-
+<p class="tags">
+    🏷️ ${cancion.tags.join(" • ")}
+</p>
             <p class="compatibilidad">
                 Compatibilidad: ${cancion.compatibilidad}%
             </p>
